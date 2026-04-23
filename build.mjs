@@ -189,11 +189,53 @@ function buildPackageJson() {
 }
 
 // --- Test ---
+// Compile test+src together with rootDir . (paths pull in src/),
+// then create a node_modules alias so require('@alkdev/typemap') resolves,
+// and rewrite bare "src/..." requires to "../src/..." for test files.
 function test(filter = "") {
+  const testDir = "target/test";
+  rmrf(testDir);
+  mkdirp(testDir);
   shell(
-    `tsc -p ./test/tsconfig.json --outDir target/test --target ES2020 --module Node16 --moduleResolution Node16`,
+    `tsc -p ./test/tsconfig.json --outDir ${testDir} --target ES2020 --module Node16 --moduleResolution Node16`,
   );
-  shell(`mocha target/test/index.js -g "${filter}"`);
+  // Create node_modules alias: @alkdev/typemap -> compiled src/index.js
+  const aliasDir = Path.join(testDir, "node_modules", "@alkdev", "typemap");
+  mkdirp(aliasDir);
+  Fs.writeFileSync(
+    Path.join(aliasDir, "package.json"),
+    JSON.stringify(
+      { name: "@alkdev/typemap", main: "../../../src/index.js" },
+      null,
+      2,
+    ),
+  );
+  // Rewrite bare "src/..." requires in test output to "../src/..."
+  rewriteSrcImports(`${testDir}/test`, "../src");
+  shell(`mocha ${testDir}/test/index.js -g "${filter}"`);
+}
+
+// Rewrite require('src/...') to relative require('../src/...') in compiled test files
+function rewriteSrcImports(dir, relativePath) {
+  function processFile(sourcePath) {
+    const ext = Path.extname(sourcePath);
+    if (ext !== ".js") return;
+    let content = Fs.readFileSync(sourcePath, "utf-8");
+    content = content.replace(/require\("src\//g, `require("${relativePath}/`);
+    content = content.replace(/require\('src\//g, `require('${relativePath}/`);
+    Fs.writeFileSync(sourcePath, content);
+  }
+  function walk(sourcePath) {
+    const stat = Fs.statSync(sourcePath);
+    if (stat.isDirectory()) {
+      for (const entry of Fs.readdirSync(sourcePath)) {
+        walk(Path.join(sourcePath, entry));
+      }
+    } else if (stat.isFile()) {
+      processFile(sourcePath);
+    }
+  }
+  walk(dir);
 }
 
 // --- Main ---
