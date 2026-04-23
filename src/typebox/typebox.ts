@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -33,7 +33,7 @@ import { type TTypeBoxFromZod, TypeBoxFromZod } from './typebox-from-zod'
 import { type TSyntaxOptions } from '../options'
 
 import * as g from '../guard'
-import * as t from '@sinclair/typebox'
+import * as t from '@alkdev/typebox'
 
 // ------------------------------------------------------------------------------
 //

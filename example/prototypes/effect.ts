@@ -29,7 +29,7 @@
 // import { Schema as et } from '@effect/schema/Schema'
 // import { Schema as es } from '@effect/schema'
 // import * as ast from '@effect/schema/AST'
-// import * as tb from '@sinclair/typebox'
+// import * as tb from '@alkdev/typebox'
 
 // // ------------------------------------------------------------------
 // // Effect Guard

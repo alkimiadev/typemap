@@ -1,5 +1,5 @@
 import { Assert } from './assert'
-import { TypeBox, Valibot, Zod } from '@sinclair/typemap'
+import { TypeBox, Valibot, Zod } from '@alkdev/typemap'
 
 describe('SyntaxOptions', () => {
   it('Should map Options (Zod)', () => {

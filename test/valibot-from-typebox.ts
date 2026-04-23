@@ -1,7 +1,7 @@
-import { TypeBox, Valibot } from '@sinclair/typemap'
-import { TypeGuard } from '@sinclair/typebox'
+import { TypeBox, Valibot } from '@alkdev/typemap'
+import { TypeGuard } from '@alkdev/typebox'
 import { Assert } from './assert'
-import * as t from '@sinclair/typebox'
+import * as t from '@alkdev/typebox'
 import * as v from 'valibot'
 
 describe('Valibot from TypeBox', () => {

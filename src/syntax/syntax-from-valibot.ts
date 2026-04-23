@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -29,7 +29,7 @@ THE SOFTWARE.
 import { type TTypeBoxFromValibot, TypeBoxFromValibot } from '../typebox/typebox-from-valibot'
 import { type TSyntaxFromTypeBox, SyntaxFromTypeBox } from './syntax-from-typebox'
 
-import * as t from '@sinclair/typebox'
+import * as t from '@alkdev/typebox'
 import * as v from 'valibot'
 
 /** Creates Syntax from Valibot */

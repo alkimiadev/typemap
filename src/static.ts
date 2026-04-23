@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -27,8 +27,8 @@ THE SOFTWARE.
 ---------------------------------------------------------------------------*/
 
 import { Validator } from './compile/validator'
-import * as s from '@sinclair/typebox/syntax'
-import * as t from '@sinclair/typebox'
+import * as s from '@alkdev/typebox/syntax'
+import * as t from '@alkdev/typebox'
 import * as v from 'valibot'
 import * as z from 'zod'
 

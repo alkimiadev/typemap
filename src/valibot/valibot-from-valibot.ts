@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 

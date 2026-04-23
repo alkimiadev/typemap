@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -26,9 +26,9 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { TypeCheck, ValueErrorIterator } from '@sinclair/typebox/compiler'
-import { Value } from '@sinclair/typebox/value'
-import * as t from '@sinclair/typebox'
+import { TypeCheck, ValueErrorIterator } from '@alkdev/typebox/compiler'
+import { Value } from '@alkdev/typebox/value'
+import * as t from '@alkdev/typebox'
 import { ZodPathFromJsonPointer } from './path'
 import * as s from './standard'
 
@@ -47,8 +47,8 @@ export class StandardSchemaProps<Type extends t.TSchema, Static = t.Static<Type>
   // ----------------------------------------------------------------
   // StandardSchemaV1.Props<Input, Output>
   // ----------------------------------------------------------------
-  public get vendor(): '@sinclair/typemap' {
-    return '@sinclair/typemap'
+  public get vendor(): '@alkdev/typemap' {
+    return '@alkdev/typemap'
   }
   public get version(): 1 {
     return 1

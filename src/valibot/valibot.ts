@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -35,7 +35,7 @@ import { type TSyntaxOptions } from '../options'
 import { type TParameter, type TContextFromParameter, ContextFromParameter } from '../typebox/typebox'
 
 import * as g from '../guard'
-import * as t from '@sinclair/typebox'
+import * as t from '@alkdev/typebox'
 import * as v from 'valibot'
 import * as c from './common'
 

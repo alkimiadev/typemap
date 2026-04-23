@@ -1,5 +1,5 @@
 import { Assert } from './assert'
-import { TypeBox, Valibot, Zod, Compile } from '@sinclair/typemap'
+import { TypeBox, Valibot, Zod, Compile } from '@alkdev/typemap'
 import { ZodPathFromJsonPointer } from 'src/compile/path'
 
 describe('Compile', () => {

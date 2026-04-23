@@ -1,4 +1,4 @@
-import { TypeBox, Valibot, Zod, Syntax, Compile } from '@sinclair/typemap'
+import { TypeBox, Valibot, Zod, Syntax, Compile } from '@alkdev/typemap'
 
 // ------------------------------------------------------------------
 // Syntax Types

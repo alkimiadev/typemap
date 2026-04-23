@@ -1,6 +1,6 @@
 import { Assert } from './assert'
-import { TypeBox, Valibot, Zod } from '@sinclair/typemap'
-import { KindGuard } from '@sinclair/typebox'
+import { TypeBox, Valibot, Zod } from '@alkdev/typemap'
+import { KindGuard } from '@alkdev/typebox'
 
 describe('Parameters', () => {
   it('Should map Parameters (Zod)', () => {

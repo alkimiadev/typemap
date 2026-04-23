@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 
-@sinclair/typemap
+@alkdev/typemap
 
 The MIT License (MIT)
 
@@ -26,15 +26,15 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------*/
 
-import { TypeCompiler, TypeCheck } from '@sinclair/typebox/compiler'
-import { Value } from '@sinclair/typebox/value'
+import { TypeCompiler, TypeCheck } from '@alkdev/typebox/compiler'
+import { Value } from '@alkdev/typebox/value'
 import { IsEvalSupported } from './environment'
 import { Validator } from './validator'
 
 import { type TTypeBox, TypeBox } from '../typebox/typebox'
 import { type TSyntaxOptions } from '../options'
 import { type TParameter } from '../typebox/typebox'
-import * as t from '@sinclair/typebox'
+import * as t from '@alkdev/typebox'
 import * as g from '../guard'
 
 // ------------------------------------------------------------------

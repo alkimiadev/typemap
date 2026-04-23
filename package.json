@@ -1,30 +1,26 @@
 {
-  "name": "@sinclair/typemap",
+  "name": "@alkdev/typemap",
   "version": "0.10.1",
   "description": "Syntax Compiler and Translation System for Runtime Types",
-  "author": "sinclairzx81",
+  "author": "alkdev",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sinclairzx81/typemap"
+    "url": "https://git.alk.dev/alkdev/typemap"
   },
   "scripts": {
-    "benchmark": "hammer task benchmark",
-    "clean": "hammer task clean",
-    "start": "hammer task start",
-    "format": "hammer task format",
-    "test": "hammer task test",
-    "build": "hammer task build",
-    "publish": "hammer task publish"
+    "clean": "node build.mjs clean",
+    "format": "prettier --no-semi --single-quote --print-width 240 --trailing-comma all --write test src",
+    "test": "node build.mjs test",
+    "build": "node build.mjs build"
   },
   "peerDependencies": {
-    "@sinclair/typebox": "^0.34.30",
+    "@alkdev/typebox": "^0.34.49",
     "valibot": "^1.0.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.2",
-    "@sinclair/hammer": "^0.18.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.10.2",
     "mocha": "^11.0.1",
